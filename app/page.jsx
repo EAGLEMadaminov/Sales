@@ -71,6 +71,7 @@ export default function Home() {
           <div>
             <Link
               href="/cart"
+              rel="stylesheet"
               className="flex border items-center p-2 rounded-sm"
             >
               <svg

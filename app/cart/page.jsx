@@ -14,7 +14,9 @@ function Cart() {
       <div className="flex flex-col items-center mt-5 ">
         <div className="flex justify-around w-full">
           <h1>Cart</h1>
-          <Link href="/">Go Home</Link>
+          <Link rel="stylesheet" href="/">
+            Go Home
+          </Link>
           <div>
             <button className="flex border items-center p-2 rounded-sm">
               <svg
@@ -33,7 +35,7 @@ function Cart() {
         </div>
       </div>
 
-      <div className="body flex w-[1000px] justify-between mx-auto">
+      <div className="body flex w-[1000px] flex-wrap justify-between mx-auto">
         {cart.map((item, index) => {
           return (
             <div
