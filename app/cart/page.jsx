@@ -14,7 +14,7 @@ function Cart() {
       <div className="flex flex-col items-center mt-5 ">
         <div className="flex justify-around w-full">
           <h1>Cart</h1>
-          <Link rel="stylesheet" href="/">
+          <Link rel="preload" href="/">
             Go Home
           </Link>
           <div>
