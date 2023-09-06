@@ -45,7 +45,7 @@ function Product() {
             width={400}
             height={400}
             alt={choosenProduct.title}
-            src={choosenProduct.images[0] ? choosenProduct?.images[0] : ""}
+            src={choosenProduct.images ? choosenProduct?.images[0] : ""}
             className="w-full  "
           ></Image>
           <div>
