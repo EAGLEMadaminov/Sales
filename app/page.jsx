@@ -71,7 +71,7 @@ export default function Home() {
           <div>
             <Link
               href="/cart"
-              rel="preload"
+              rel="prefetch"
               className="flex border items-center p-2 rounded-sm"
             >
               <svg
@@ -112,7 +112,7 @@ export default function Home() {
 
               <Link
                 href="/product"
-                rel="preload"
+                rel="prefetch"
                 className=" border px-3 py-2 rounded-sm text-center"
                 onClick={() => setChoosenProduct(item)}
               >

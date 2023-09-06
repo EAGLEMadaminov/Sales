@@ -22,7 +22,7 @@ function Product() {
           <Link href="/">Go Home</Link>
           <Link
             href="/cart"
-            rel="preload"
+            rel="prefetch"
             className="flex border items-center p-2 rounded-sm"
           >
             <svg
