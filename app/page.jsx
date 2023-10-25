@@ -26,7 +26,6 @@ export default function Home() {
         } else {
           url = `https://dummyjson.com/products?limit=20${skipNum}`;
         }
-        console.log(url);
         const response = await fetch(url, {
           method: "GET",
           headers: {
@@ -35,8 +34,8 @@ export default function Home() {
         });
 
         const jsonData = await response.json();
-        console.log(jsonData.products);
         setProducts(jsonData.products);
+        console.log(jsonData);
         setLoading(false);
       };
       fetchFunction();
@@ -45,14 +44,13 @@ export default function Home() {
   );
 
   const Next = () => {
-    num < products.length / 20 && setNum(++num);
+    num < 1 && setNum(++num);
   };
 
   const back = () => {
     num > 1 && setNum(--num);
   };
 
-  console.log(choosenProduct);
   return (
     <div className="w-[1000px] mx-auto">
       <div className="flex flex-col items-center mt-5 ">
@@ -79,7 +77,7 @@ export default function Home() {
                 width="16"
                 height="16"
                 fill="currentColor"
-                class="bi bi-cart3"
+                className="bi bi-cart3"
                 viewBox="0 0 16 16"
               >
                 <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
@@ -132,11 +130,11 @@ export default function Home() {
             width="16"
             height="16"
             fill="currentColor"
-            class="bi bi-chevron-left"
+            className="bi bi-chevron-left"
             viewBox="0 0 16 16"
           >
             <path
-              fill-rule="evenodd"
+              fillRule="evenodd"
               d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
             />
           </svg>
@@ -146,7 +144,7 @@ export default function Home() {
             <button
               onClick={() => {
                 setCur(p.page);
-                setSkipNum(`&skip=${i * 10}`);
+                setSkipNum(`&skip=${i * 20}`);
               }}
               className={`h-12 border-2  border-indigo-600 w-12 border-r-0 ${
                 cur === p.page && "bg-indigo-600 text-white"
@@ -166,11 +164,11 @@ export default function Home() {
             width="16"
             height="16"
             fill="currentColor"
-            class="bi bi-chevron-right"
+            className="bi bi-chevron-right"
             viewBox="0 0 16 16"
           >
             <path
-              fill-rule="evenodd"
+              fillRule="evenodd"
               d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
             />
           </svg>
