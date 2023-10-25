@@ -6,6 +6,7 @@ import Link from "next/link";
 
 function Product() {
   const { choosenProduct, cartNum, addToCart } = useGlobalContext();
+  console.log(choosenProduct);
   return (
     <div className="w-[1000px]  mx-auto">
       <div className=" mt-5 bg-white text-black   ">

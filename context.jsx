@@ -24,10 +24,10 @@ const AppProvider = ({ children }) => {
       ...prevState,
       { ...choosenProduct, id: generateUniqueId() },
     ]);
-    console.log(cart);
     setCount(count++);
     setCartNum(cartNum + 1);
   };
+  console.log(cart);
 
   const removeFromCart = (productId) => {
     setCart((cart) => cart.filter((item) => item.id !== productId));
